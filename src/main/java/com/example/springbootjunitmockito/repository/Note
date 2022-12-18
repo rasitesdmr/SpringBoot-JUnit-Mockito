@@ -1,0 +1,19 @@
+UserRepository 1-)
+
+                         @Query("" +
+                                    "SELECT CASE WHEN COUNT(s) > 0 THEN " +
+                                    "TRUE ELSE FALSE END " +
+                                    "FROM Student s " +
+                                    "WHERE s.email = ?1"
+                            )  ?
+
+Sorgu ek açıklaması Java'da bir depo yöntemi için özel bir JPQL (Java Persistence Query Language) veya yerel SQL
+sorgusu belirtmek için kullanılır. Ayrı bir depo uygulama sınıfı yerine doğrudan depo arayüzünde bir sorgu
+tanımlamanıza olanak tanır.
+
+Bu örnekte, @Query ek açıklaması, belirli bir e-posta adresine sahip bir Öğrenci varlığı olup olmadığını kontrol eden
+bir JPQL sorgusu tanımlamak için kullanılır. Sorgu, belirtilen e-posta adresine sahip Student varlıklarının sayısının
+0'dan büyük olup olmamasına bağlı olarak boolean bir değer döndürmek için bir CASE ifadesi kullanır.
+
+Sorgudaki ?1, sorgu yürütüldüğünde ilk yöntem parametresinin gerçek değeriyle değiştirilecek olan konumsal bir
+parametredir.

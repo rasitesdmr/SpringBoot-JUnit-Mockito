@@ -1,0 +1,8 @@
+UserController 1-)
+
+                                    @Valid and @RequestBody ?
+
+Yöntem, @Valid ve @RequestBody ek açıklamaları ile açıklanan tek bir parametre olan student alır. Valid ek açıklaması,
+öğrenci nesnesinin sınıf ve alan düzeyindeki doğrulama ek açıklamalarında belirtilen kısıtlamalar kullanılarak
+doğrulanması gerektiğini belirtir. RequestBody ek açıklaması, öğrenci nesnesinin POST isteğinin istek gövdesinden
+serileştirilmesi gerektiğini belirtir.

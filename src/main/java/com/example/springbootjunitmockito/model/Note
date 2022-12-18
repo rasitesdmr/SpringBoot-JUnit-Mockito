@@ -1,0 +1,34 @@
+Student 1-)
+
+             @SequenceGenerator(name = "student_sequence",sequenceName = "student_sequence",allocationSize = 1) ?
+             @GeneratedValue(generator = "student_sequence",strategy = GenerationType.SEQUENCE) ?
+
+Java'da @SequenceGenerator ek açıklaması, bir veritabanı dizisi için bir oluşturucu tanımlamak üzere kullanılır.
+Genellikle bir veritabanı dizisi tarafından oluşturulan bir varlık için birincil anahtar değeri belirtmek üzere
+@GeneratedValue ek açıklamasıyla birlikte kullanılır. name niteliği, @GeneratedValue ek açıklamasında başvurmak için
+kullanılabilecek olan oluşturucunun adını belirtir. sequenceName niteliği, anahtar değeri oluşturmak için kullanılacak
+veritabanı dizisinin adını belirtir. AllocationSize niteliği, dizinin artış boyutunu belirtir. Örneğin, allocationSize
+değeri 10 olarak ayarlanırsa, her yeni anahtar değeri oluşturulduğunda sıra 10 artırılır.
+
+                                        @Column(nullable = false) ?
+
+Java'da @Column ek açıklaması, bir varlık sınıfındaki bir alanın veritabanı tablosundaki bir sütuna eşlenmesini
+belirtmek için kullanılır. Sütunun NULL değerlere izin verip vermediğini belirtmek için nullable niteliği
+kullanılabilir. nullable özelliği false olarak ayarlanırsa, sütun NULL değerlere izin vermez.
+
+                                                @NotNull ?
+
+@NotNull ek açıklamasının, bir veritabanı sütununun NULL değerlere izin vermemesi gerektiğini belirtmek için kullanılan
+@Column(nullable = false) ek açıklamasının yerine geçmediğini belirtmek gerekir. NotNull ek açıklaması giriş verilerini
+doğrulamak için kullanılırken, @Column ek açıklaması bir alanın bir veritabanı sütununa eşlenmesini belirtmek için
+kullanılır.
+
+                                               @Enumerated ?
+
+Java'da @Enumerated ek açıklaması, bir alanın veritabanında numaralandırılmış bir tür olarak tutulması gerektiğini
+belirtmek için kullanılır. EnumType niteliği, veritabanında kullanılması gereken numaralandırılmış alanın türünü
+belirtir. EnumType.STRING niteliği, numaralandırılmış alanın veritabanında bir dize olarak tutulması gerektiğini
+belirtir. Bu, numaralandırılmış değerin adının veritabanı sütununda saklanacağı anlamına gelir. EnumType.ORDINAL
+niteliğinin @Enumerated ek açıklamasıyla da kullanılabileceğini belirtmek gerekir. Bu öznitelik, numaralandırılmış
+alanın veritabanında bir tamsayı olarak tutulması gerektiğini ve sıra değerinin (numaralandırılmış değerin
+numaralandırmadaki konumu) veritabanı sütununda saklanacağını belirtir.

@@ -1,0 +1,16 @@
+application.properties 1-)
+
+                                    jdbc:h2://mem:db;DB_CLOSE_DELAY=-1 ?
+
+Bu, bir Spring uygulaması için uygulamanın bağlanması gereken veritabanının URL'sini belirten bir yapılandırma
+özelliğidir. Bu durumda yapılandırma özelliği, uygulamanın jdbc:h2://mem:db;DB_CLOSE_DELAY=-1 URL'sini kullanarak
+bir bellek içi H2 veritabanına bağlanması gerektiğini belirtir.
+
+URL'nin jdbc:h2://mem:db kısmı, H2 veritabanının bellekte çalıştırılması gerektiğini belirtir; bu, veritabanının
+diske kalıcı olarak kaydedilmeyeceği ve uygulama kapandığında silineceği anlamına gelir. URL'nin DB_CLOSE_DELAY=-1
+kısmı, veritabanının son bağlantı kapatıldığında kapatılmaması gerektiğini belirtir. Bu, veritabanının uygulama
+tarafından yeniden kullanılmasına izin verdiği için bellek içi veritabanları için kullanışlıdır.
+
+H2 veritabanının genellikle geliştirme ve test amaçlı kullanılan hafif, açık kaynaklı bir veritabanı olduğunu
+belirtmek gerekir. Hem bellek içi hem de disk tabanlı depolamayı destekler ve çeşitli Java uygulamalarıyla
+kullanılabilir.
